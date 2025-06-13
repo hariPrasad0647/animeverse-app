@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  font-family: 'Sacramento', cursive, sans-serif;
+  text-align: center;
+  background-image: url("https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  backdrop-filter: blur(10px);
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.loader {
+  margin-top: 35vh;
+}
+
+.animelist-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.upper-container {
+  padding: 0 70px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.filter-buttons-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgb(0, 140, 255);
+  box-shadow: 0 0 15px rgb(0, 140, 255);
+  cursor: pointer;
+  transition: box-shadow 0.4s ease;
+}
+
+.filter-button:hover {
+  box-shadow: 0 0 5px rgb(0, 140, 255),
+              0 0 25px rgb(0, 140, 255),
+              0 0 50px rgb(0, 140, 255),
+              0 0 100px rgb(0, 140, 255);
+}
+
+.description {
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 20px auto;
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.glow {
+  color: #fff6a9;
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+               0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  20%, 24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+                 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+/* search bar */
+
+/* From Uiverse.io by boryanakrasteva */ 
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.input {
+  border-style: none;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  outline: none;
+  border-radius: 50%;
+  transition: .5s ease-in-out;
+  background-color: #7e4fd4;
+  box-shadow: 0px 0px 3px #f3f3f3;
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input::placeholder,
+.input {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 17px;
+}
+
+.input::placeholder {
+  color: #8f8f8f;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border-style: none;
+  border-radius: 50%;
+  pointer-events: painted;
+  background-color: transparent;
+  transition: .2s linear;
+}
+
+.icon:focus ~ .input,
+.input:focus {
+  box-shadow: none;
+  width: 250px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 3px solid #7e4fd4;
+  transition: all 280ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+
+@keyframes appear {
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.block{
+  animation:  appear 5s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.filter-button-previous{
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgb(0, 140, 255);
+  box-shadow: 0 0 15px rgb(0, 140, 255);
+  cursor: pointer;
+  transition: box-shadow 0.4s ease;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.header{
+  text-align: center;
+}
+
+.view{
+  text-align: center;
+}

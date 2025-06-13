@@ -1,0 +1,86 @@
+
+.hp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(2, 0, 36);
+    background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(30, 54, 59, 1) 0%,
+    rgba(93, 93, 116, 1) 100%
+  );
+}
+
+h1{
+    color: rgb(105, 215, 97);
+}
+
+label{
+    color: rgb(255, 255, 255);
+}
+
+.form-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #1e272e;
+    border-radius: 8px;
+    background: transparent;
+    
+    background: inherit;
+    backdrop-filter: blur(10px);
+
+}
+
+select{
+    
+    height: 30px;
+}
+
+
+.form-container div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.form-container input {
+    flex: 1;
+    height: 20px;
+}
+
+
+.btn-con {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+  width: 100%;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.heading-container{
+    display: flex;
+    text-align: center;
+}
+
+.submission{
+    color:rgb(105, 215, 97); 
+    font-size: 20px;
+}
+ 
+

@@ -1,0 +1,23 @@
+.logo{
+    height: 100px;
+    margin-right: 920px;
+}
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(32, 30, 30);
+    height: 80px;
+    
+}
+.home{
+    margin-left: 35px;
+}
+.input-search{
+    height: 25px;
+    border-radius: 50px;
+    padding: 10px;
+    padding-left: 20px;
+    border-width: 1px;
+}
