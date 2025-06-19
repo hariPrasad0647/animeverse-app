@@ -1,78 +1,87 @@
 .body-container {
-    margin: 0;
-    font-family: 'Helvetica Neue', sans-serif;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7));
-    color: #fff;
-    background-size: cover;
-    filter: invert(10px);
-    
-    background: fixed;
-    z-index: -1;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    margin-left: 12vw;
-  }
-  
-  .movie-details {
-    display: flex;
-    margin-top: 40px;
-  }
-  
-  .poster {
-    width: 250px;
-    margin-right: 30px;
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
 
-  }
+.title{
+  color: #00f7b9;
+}
   
-  .poster img {
-    width: 100%;
-    border-radius: 8px;
-  }
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-left: 12vw;
+}
   
-  .details {
-    flex: 1;
-    margin-left: 100px;
-  }
+.movie-details {
+  display: flex;
+  margin-top: 40px;
+}
   
-  .details h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
+.poster {
+  width: 250px;
+  margin-right: 30px;
+}
   
-  .details .info {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: #ddd;
-  }
+.poster img {
+  width: 100%;
+  border-radius: 8px;
+}
   
-  .details .available {
-    margin-bottom: 15px;
-  }
+.details {
+  flex: 1;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
   
-  .details .rating {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-  }
+.details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
   
-  .details .rating span {
-    margin-right: 10px;
-  }
+.details .info {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #ddd;
+}
   
-  .download-button {
-    background-color: #6ac045;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
-  }
+.details .available {
+  margin-bottom: 15px;
+}
+  
+.details .rating {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+  
+.details .rating span {
+  margin-right: 10px;
+}
+  
+.download-button {
+  background-color: #6ac045;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
   
   .similar-movies {
     margin-top: 40px;
@@ -109,3 +118,60 @@
   .each-anime-poster{
     border: 3px solid #ffbf00;
   }
+.like-button{
+  background-image: linear-gradient(to left, #14fff7,#efce14);
+  border-radius: 20px;
+  height: 40px;
+  color: #ff0000;
+  text-align: center;
+}
+.watch-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.watch-option-button{
+  background-image: radial-gradient(#FBF0B2,#FF8080);
+  border-radius: 20px;
+  margin-left: 10px;
+  color:#0068e7;
+}
+.watch-options-para{
+  color: #74f5d5;
+  font-size: 19px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.suggestions-carousal .each-anime-item-container {
+  padding: 10px;
+  margin: 10px;
+}
+
+.carousel-container {
+  padding: 20px;
+}
+
+.carousel-item-padding-40-px {
+  padding: 0 10px;
+}
+.thumbnail-container {
+  height: 380px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  border: 3px solid rgb(126, 157, 23);
+}
+.carousel-card-wrapper {
+  width: 290px;
+  height: 500px;
+  margin: 0 auto;
+  
+}
+.carousel-item-padding {
+  padding: 10px 15px; 
+}
+.carousel-section{
+  text-align: center;
+}

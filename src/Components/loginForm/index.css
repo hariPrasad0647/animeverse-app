@@ -4,13 +4,8 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(2, 0, 36);
-    background: radial-gradient(
-    circle,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(30, 54, 59, 1) 0%,
-    rgba(93, 93, 116, 1) 100%
-  );
+    background-image: url("https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
 }
 
 h1{
@@ -27,7 +22,10 @@ label{
     background-color: #1e272e;
     border-radius: 8px;
     background: transparent;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: inherit;
     backdrop-filter: blur(10px);
 
@@ -83,4 +81,33 @@ button {
     font-size: 20px;
 }
  
+.loginLoader{
+    color: beige;
+    margin-top: 10px;
+}
 
+.loader-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom{
+    margin-top: 15px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+.login-button{
+    border-radius: 20px;
+    background-image: linear-gradient(to left, #cdf35a,#B6F500);
+    color: rgb(255, 255, 255);
+}
+
+.input-field{
+    height: 25px;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+}

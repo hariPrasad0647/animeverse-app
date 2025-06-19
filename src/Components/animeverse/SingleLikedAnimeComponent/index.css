@@ -1,0 +1,51 @@
+/* Container for centering all cards */
+.anime-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Each anime card */
+.single-anime {
+  background-image: linear-gradient(to left, #E3EEB2, #71C0BB);
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Align image and text vertically */
+  width: 500px;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Anime image */
+.small-image {
+  height: 80px;
+  width: auto;
+  border-radius: 10px;
+}
+
+/* Container for image */
+.small-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+/* Container for anime text info */
+.anime-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* Paragraph styles */
+.like-para {
+  color: rgb(16, 149, 231);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}

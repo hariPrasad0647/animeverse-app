@@ -3,7 +3,6 @@ import './index.css';
 
 const SingleAnimeList = props => {
   const { eachAnimeDetail, id, title } = props;
-  console.log(id);
 
   return (
     <Link to={`/anime/${id}`} className="each-anime-item-container">
@@ -11,7 +10,7 @@ const SingleAnimeList = props => {
         <div
           className="thumbnail-container"
           style={{ backgroundImage: `url(${eachAnimeDetail})` }}
-        ></div>
+        />
         <div className="title-container">
           <p className="name">{title}</p>
         </div>
@@ -21,3 +20,4 @@ const SingleAnimeList = props => {
 };
 
 export default SingleAnimeList;
+

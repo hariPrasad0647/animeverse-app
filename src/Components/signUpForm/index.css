@@ -27,7 +27,10 @@ label{
     background-color: #1e272e;
     border-radius: 8px;
     background: transparent;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: inherit;
     backdrop-filter: blur(10px);
 
@@ -84,3 +87,40 @@ button {
 }
  
 
+.signup-button{
+    border-radius: 20px;
+    background-image: linear-gradient(to left, #cdf35a,#B6F500);
+    color: rgb(255, 255, 255);
+}
+
+.label-input {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  /* slight spacing between fields */
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+  margin: 4px 0 0 0;
+  display: none; /* Hide by default */
+}
+
+.form-error.show {
+  display: block; /* Only show when needed */
+}
+
+.login-route{
+    font-size: 18px;
+    font-family: cursive;
+}
+
+.creating{
+    color: #39FF14;
+    font-size: 20px;
+    margin-top: "10px";
+    font-weight: 500;
+    background-color: #1e272e;
+    
+}

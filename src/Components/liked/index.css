@@ -1,0 +1,20 @@
+.text-container{
+    text-align: center;
+    margin-top: 20px;
+}
+.liked-anime-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.single-anime{
+    margin-top: 20px;
+}
+.liked-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

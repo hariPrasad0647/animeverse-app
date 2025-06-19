@@ -9,10 +9,13 @@
     align-items: center;
     background-color: rgb(32, 30, 30);
     height: 80px;
+    text-align: center;
     
 }
 .home{
     margin-left: 35px;
+    border-radius: 20px;
+    background-image: linear-gradient(to left, #56DFCF,#0ABAB5);
 }
 .input-search{
     height: 25px;
@@ -20,4 +23,31 @@
     padding: 10px;
     padding-left: 20px;
     border-width: 1px;
+}
+.link{
+    text-decoration: none;
+}
+.liked{
+    background-image: linear-gradient(to left,#d76565, #FF0B55);
+    
+}
+.userName{
+    color: #0ABAB5;
+    text-align: center;
+    color: #ffffff;
+    font-family: Helvetica;
+}
+
+.username-button{
+    height: 40px;
+    background-image: linear-gradient(to left, #D8B4F8, #0897df);
+    
+}
+.logout{
+    height: 40px;
+    background-image: linear-gradient(to left, #F4631E,#CB0404 );
+}
+.login{
+    height: 40px;
+    background-image: linear-gradient(to left, #77B254,#5B913B );
 }
