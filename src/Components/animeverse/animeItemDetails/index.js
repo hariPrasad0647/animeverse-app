@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { BeatLoader } from 'react-spinners';
 import Carousel from 'react-multi-carousel';
@@ -32,7 +32,7 @@ const AnimeItemDetails = () => {
     isLiked ? removeFromLiked(animeData.id) : addToLiked(animeData);
   };
 
-  const fetchAnimeDetails = async () => {
+  const fetchAnimeDetails = useCallback(async () => {
     try {
       const response = await fetch(`${process.env.REACT_APP_SINGLE_ANIME}${id}`);
       const data = await response.json();
@@ -42,9 +42,9 @@ const AnimeItemDetails = () => {
       console.error('Error fetching anime details:', error);
       setIsLoading(false);
     }
-  };
+  }, [id]);
 
-  const fetchWatchOptions = async () => {
+  const fetchWatchOptions = useCallback(async () => {
     try {
       const response = await fetch(`${process.env.REACT_APP_STREAMING_API}${id}/streaming`);
       const data = await response.json();
@@ -52,13 +52,12 @@ const AnimeItemDetails = () => {
     } catch (error) {
       console.error('Error fetching watch options:', error);
     }
-  };
+  }, [id]);
 
-  const fetchSuggestions = async () => {
+  const fetchSuggestions = useCallback(async () => {
     try {
       const response = await fetch(process.env.REACT_APP_GET_RECCOMENDATIONS);
       const data = await response.json();
-      console.log(data)
       const finalSuggestedData = data.data.slice(0, 10).map(item => {
         const entry = item.entry[0];
         return {
@@ -67,18 +66,17 @@ const AnimeItemDetails = () => {
           imageUrl: entry.images?.jpg?.image_url
         };
       });
-      console.log(finalSuggestedData)
       setSuggestions(finalSuggestedData);
     } catch (e) {
       console.log(`Error: ${e.message}`);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchAnimeDetails();
     fetchWatchOptions();
     fetchSuggestions();
-  }, [id]);
+  }, [fetchAnimeDetails, fetchWatchOptions, fetchSuggestions]);
 
   const responsive = {
     superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 5 },
@@ -178,20 +176,17 @@ const AnimeItemDetails = () => {
       <div className="carousel-section">
         <h1>You Might Also Like</h1>
         <Carousel responsive={responsive} itemClass="carousel-item-padding" className="suggestions-carousel">
-            {suggestions.map(anime => (
+          {suggestions.map(anime => (
             <div key={anime.id} className="carousel-card-wrapper">
               <SingleAnimeList
-              id={anime.id}
-              eachAnimeDetail={anime.imageUrl}
-              title={anime.title}
+                id={anime.id}
+                eachAnimeDetail={anime.imageUrl}
+                title={anime.title}
               />
             </div>
-             ))}
+          ))}
         </Carousel>
- 
       </div>
-      
-
     </div>
   );
 };
