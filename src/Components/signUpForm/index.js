@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import './index.css';
 
+const initialValues = { name: "", userName: "", password: "", password2: "" };
+
 const SignUpForm = () => {
-  const initialValues = { name: "", userName: "", password: "", password2: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [serverError, setServerError] = useState(""); // for backend messages
@@ -70,7 +71,13 @@ const SignUpForm = () => {
     };
 
     submitData();
-  }, [formErrors, isSubmit]);
+  }, [
+  formErrors,
+  isSubmit,
+  formValues.name,
+  formValues.userName,
+  formValues.password,
+]);
 
   return (
     <div className='hp-container'>

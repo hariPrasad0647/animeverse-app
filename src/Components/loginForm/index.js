@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useEffect, useState, useCallback } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import Cookies from "js-cookie";
 import "./index.css";
 
+const initialValues = { userName: "", password: "" };
+
 const Login = () => {
-  const initialValues = { userName: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [loading, setLoading] = useState(false); // loading state
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -26,20 +26,16 @@ const Login = () => {
 
   const validate = (values) => {
     const errors = {};
-    if (!values.userName) {
-      errors.userName = "Please Enter Your userName";
-    }
-    if (!values.password) {
-      errors.password = "Please Enter Your password";
-    }
+    if (!values.userName) errors.userName = "Please Enter Your userName";
+    if (!values.password) errors.password = "Please Enter Your password";
     return errors;
   };
 
-  const onSubmitSuccess = (jwt, userName) => {
+  const onSubmitSuccess = useCallback((jwt, userName) => {
     Cookies.set("Jwt_Token", jwt, { expires: 30 });
     localStorage.setItem("userName", userName);
     navigate("/");
-  };
+  }, [navigate]);
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -48,7 +44,7 @@ const Login = () => {
         password: formValues.password,
       };
 
-      setLoading(true); // Start loader
+      setLoading(true);
 
       fetch(process.env.REACT_APP_LOGIN_API, {
         method: "POST",
@@ -57,23 +53,26 @@ const Login = () => {
       })
         .then(async (res) => {
           const data = await res.json();
-          console.log(data);
-          setLoading(false); // Stop loader
+          setLoading(false);
 
           if (res.ok === true) {
             onSubmitSuccess(data.jwtToken, data.userName);
           } else {
-            console.log("Login Failed:", data.error_msg);
             alert("Login Failed: " + (data.error_msg || "Unknown error"));
           }
         })
         .catch((err) => {
-          setLoading(false); // Stop loader
-          console.error("Fetch error:", err);
+          setLoading(false);
           alert("Server error. Please try again later.");
         });
     }
-  }, [formErrors]);
+  }, [
+    formErrors,
+    isSubmit,
+    formValues.userName,
+    formValues.password,
+    onSubmitSuccess,
+  ]);
 
   return (
     <div className="hp-container">
@@ -91,8 +90,8 @@ const Login = () => {
               type="text"
               className="input-field"
               id="username"
-              value={formValues.userName}
               name="userName"
+              value={formValues.userName}
               onChange={handleChange}
             />
             <p>{formErrors.userName}</p>
@@ -100,17 +99,19 @@ const Login = () => {
           <div>
             <label htmlFor="password">Password</label>
             <input
-              className="input-field"
               type="password"
+              className="input-field"
               id="password"
-              value={formValues.password}
               name="password"
+              value={formValues.password}
               onChange={handleChange}
             />
             <p>{formErrors.password}</p>
           </div>
           <button className="login-button" type="submit">Login</button>
-          <p className="bottom">Please SignUp <Link to='/register'>Here</Link> if you are new</p>
+          <p className="bottom">
+            Please SignUp <Link to="/register">Here</Link> if you are new
+          </p>
         </form>
       )}
     </div>

@@ -84,6 +84,9 @@ button {
 .loginLoader{
     color: beige;
     margin-top: 10px;
+    color: rgb(0, 255, 85);
+    font-size: 20px;
+    background-color: #1e272e;
 }
 
 .loader-container{
@@ -102,7 +105,7 @@ button {
 .login-button{
     border-radius: 20px;
     background-image: linear-gradient(to left, #cdf35a,#B6F500);
-    color: rgb(255, 255, 255);
+
 }
 
 .input-field{
